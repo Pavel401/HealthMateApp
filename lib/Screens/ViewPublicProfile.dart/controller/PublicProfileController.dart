@@ -47,9 +47,9 @@ class PublicProfileFetchController extends GetxController {
           PublicProfileFetchedModel.fromJson(json.decode(response.body));
       data = fetchedModel.data;
       print("data is " + data!.visit[0].hospital);
-
-      Get.to(View());
-      Get.forceAppUpdate();
+      Get.to(View(
+        data: fetchedModel.data,
+      ));
     } else if (response.statusCode == 401) {
       Get.back();
     }

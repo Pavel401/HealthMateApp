@@ -18,7 +18,9 @@ import 'package:otp_text_field/style.dart';
 import 'package:sizer/sizer.dart';
 
 class View extends StatefulWidget {
-  const View({super.key});
+  View({super.key, required this.data});
+
+  Data? data;
 
   @override
   State<View> createState() => _ViewState();
@@ -124,8 +126,6 @@ class _ViewState extends State<View> {
         });
   }
 
-  PublicProfileFetchController publicProfileFetchController =
-      PublicProfileFetchController();
   @override
   Widget build(BuildContext context) {
     OtpFieldController otpController = OtpFieldController();
@@ -177,8 +177,7 @@ class _ViewState extends State<View> {
                             width: 2.w,
                           ),
                           Text(
-                            publicProfileFetchController.data!.basicInfo.height
-                                .toString(),
+                            widget.data!.basicInfo.height.toString(),
                             style: context.subtitle1,
                           ),
                           Text(
@@ -199,8 +198,7 @@ class _ViewState extends State<View> {
                             width: 2.w,
                           ),
                           Text(
-                            publicProfileFetchController.data!.basicInfo.weight
-                                .toString(),
+                            widget.data!.basicInfo.weight.toString(),
                             style: context.subtitle1,
                           ),
                           Text(
@@ -221,8 +219,7 @@ class _ViewState extends State<View> {
                             width: 2.w,
                           ),
                           Text(
-                            publicProfileFetchController
-                                .data!.basicInfo.bloodGroup,
+                            widget.data!.basicInfo.bloodGroup,
                             style: context.subtitle1,
                           ),
                           // Text(
@@ -271,14 +268,11 @@ class _ViewState extends State<View> {
                     spacing: 10,
                     children: [
                       for (int i = 0;
-                          i <
-                              publicProfileFetchController
-                                  .data!.basicInfo.allergies.length;
+                          i < widget.data!.basicInfo.allergies.length;
                           i++)
                         Chip(
                           label: Text(
-                            publicProfileFetchController
-                                .data!.basicInfo.allergies[i],
+                            widget.data!.basicInfo.allergies[i],
                             style: context.heading1.copyWith(
                                 fontWeight: FontWeight.w800,
                                 fontSize: 10,
@@ -306,14 +300,11 @@ class _ViewState extends State<View> {
                     spacing: 10,
                     children: [
                       for (int i = 0;
-                          i <
-                              publicProfileFetchController
-                                  .data!.basicInfo.diseases.length;
+                          i < widget.data!.basicInfo.diseases.length;
                           i++)
                         Chip(
                           label: Text(
-                            publicProfileFetchController
-                                .data!.basicInfo.diseases[i],
+                            widget.data!.basicInfo.diseases[i],
                             style: context.heading1.copyWith(
                                 fontWeight: FontWeight.w800,
                                 fontSize: 10,
@@ -343,22 +334,19 @@ class _ViewState extends State<View> {
             ],
           ),
 
-          publicProfileFetchController.data!.visit.length > 0
+          widget.data!.visit.length > 0
               ? Container(
                   width: 100.w,
                   height: 50.h,
                   child: ListView.builder(
-                      itemCount:
-                          publicProfileFetchController.data!.visit.length,
+                      itemCount: widget.data!.visit.length,
                       itemBuilder: ((context, index) {
                         return GestureDetector(
                           onTap: () {
-                            _showTestDialog(publicProfileFetchController
-                                .data!.visit[index]);
+                            _showTestDialog(widget.data!.visit[index]);
                           },
                           child: VisitCard(
-                            timeline:
-                                publicProfileFetchController.data!.visit[index],
+                            timeline: widget.data!.visit[index],
                           ),
                         );
                       })),
