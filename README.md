@@ -1,17 +1,7 @@
-# medica
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
 # HealthMate
+
+An app to solve the most rudamentary problem in our Health sector, Unstructured Health Records of Patients. In our app whenever user goes to the Hospital/Doctor he can add it as a VISIT in our app which can have all the info like Scan files and all.
+
+
+
+![Component 27](https://user-images.githubusercontent.com/42716731/206828012-7291f650-d6d5-4489-b520-1b27196f1615.png)
