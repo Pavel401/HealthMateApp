@@ -11,6 +11,7 @@ import 'package:medica/Screens/Insurance/Insurance.dart';
 import 'package:medica/Screens/Profile/Profile.dart';
 import 'package:medica/Screens/ShareProfile/ShareProfile.dart';
 import 'package:medica/Screens/ViewPublicProfile.dart/ViewPublicProfile.dart';
+import 'package:medica/Screens/donations/donations.dart';
 import 'package:medica/constants/health_mate_colors.dart';
 import 'package:medica/main.dart';
 
@@ -190,9 +191,9 @@ class _NavigationState extends State<Navigation> {
                 CustomNavigationBarItem(
                   icon: const Icon(Icons.health_and_safety_outlined),
                 ),
-                // CustomNavigationBarItem(
-                //   icon: const Icon(Icons.volunteer_activism_outlined),
-                // ),
+                CustomNavigationBarItem(
+                  icon: const Icon(Icons.volunteer_activism_outlined),
+                ),
               ],
               currentIndex: landingPageController.tabIndex.value,
               onTap: landingPageController.changeTabIndex,
@@ -208,7 +209,7 @@ class _NavigationState extends State<Navigation> {
                 Home(),
                 Profile(),
                 Insurance(),
-                // Insurance(),
+                Donations(),
               ],
             ),
           ),
