@@ -141,7 +141,6 @@ class AddTimeLineController extends GetxController {
           timelineFetchedDataModelFromJson(response.body);
       timelines = timelineFetchedDataModel.data.results;
       Get.forceAppUpdate();
-      Get.back();
       // getTimelineData();
       Get.back();
     } else if (response.statusCode == 401) {

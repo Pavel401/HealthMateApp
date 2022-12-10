@@ -36,20 +36,6 @@ class DailyRecordsController extends GetxController {
   }
 
   Future<void> getallData() async {
-    var spinkit = SpinKitPulse(
-      color: HealthMateColors.happyGreen,
-      size: 50.0,
-    );
-    Get.dialog(
-      Container(
-        height: 100,
-        width: 100,
-        child: Center(
-          child: spinkit,
-        ),
-      ),
-      barrierDismissible: false,
-    );
     // print(token);
     var base_url =
         "https://hackathonbackend-production.up.railway.app/api/v1/user/allMeasurementOfDate/" +
@@ -86,7 +72,6 @@ class DailyRecordsController extends GetxController {
       // print(getParticularDateData.data.results[0].type.toString());
       dataFrom_a_particular_date = getParticularDateData.data.results;
       Get.forceAppUpdate();
-      Get.back();
     } else if (response.statusCode == 401) {
       Get.back();
     }

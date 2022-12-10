@@ -41,7 +41,7 @@ class _MyAppState extends State<MyApp> {
   getStringValuesSF() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     //Return String
-    String? stringValue = prefs.getString("token"); //token
+    String? stringValue = prefs.getString("tokens"); //token
 
     print("token is" + stringValue.toString());
 
