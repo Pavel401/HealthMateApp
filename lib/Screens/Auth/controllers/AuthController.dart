@@ -23,10 +23,8 @@ class AuthController extends GetxController {
   final sinUpKey = GlobalKey<FormState>();
   final logInKey = GlobalKey<FormState>();
   late BuildContext context;
-  TextEditingController emailController =
-      TextEditingController(text: "pavelalam401@gmail.com");
-  TextEditingController passwordController =
-      TextEditingController(text: "PAVELALAM401!");
+  TextEditingController emailController = TextEditingController(text: "");
+  TextEditingController passwordController = TextEditingController(text: "");
   TextEditingController usernameController = TextEditingController(text: "");
   TextEditingController phonenoController = TextEditingController(text: "");
 

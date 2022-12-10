@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:custom_navigation_bar/custom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -126,36 +128,41 @@ class _NavigationState extends State<Navigation> {
                   Get.to(ShareProfile());
                 },
               ),
-              // ListTile(
-              //   leading: Icon(
-              //     Icons.radar,
-              //     color: HealthMateColors.shyGrey,
-              //   ),
-              //   title: Text(
-              //     'View Public Profile',
-              //     style: TextStyle(
-              //       fontWeight: FontWeight.bold,
-              //       color: HealthMateColors.shyGrey,
-              //     ),
-              //   ),
-              //   onTap: () async {
-              //     Get.to(ViewPublicProfile());
-              //   },
-              // ),
               ListTile(
                 leading: Icon(
-                  Icons.logout_outlined,
+                  Icons.radar,
                   color: HealthMateColors.shyGrey,
                 ),
                 title: Text(
-                  'Logout',
+                  'View Public Profile',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: HealthMateColors.shyGrey,
                   ),
                 ),
                 onTap: () async {
-                  showMyDialog();
+                  Get.to(ViewPublicProfile());
+                },
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.logout_outlined,
+                  color: HealthMateColors.shyGrey,
+                ),
+                title: Text(
+                  'Exit',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: HealthMateColors.shyGrey,
+                  ),
+                ),
+                onTap: () async {
+                  // final preferences = await SharedPreferences.getInstance();
+                  // await preferences.clear();
+
+                  // print('Confirmed');
+                  // Get.to(MyApp());
+                  exit(0);
                 },
               ),
             ],
@@ -183,9 +190,9 @@ class _NavigationState extends State<Navigation> {
                 CustomNavigationBarItem(
                   icon: const Icon(Icons.health_and_safety_outlined),
                 ),
-                CustomNavigationBarItem(
-                  icon: const Icon(Icons.volunteer_activism_outlined),
-                ),
+                // CustomNavigationBarItem(
+                //   icon: const Icon(Icons.volunteer_activism_outlined),
+                // ),
               ],
               currentIndex: landingPageController.tabIndex.value,
               onTap: landingPageController.changeTabIndex,
@@ -201,7 +208,7 @@ class _NavigationState extends State<Navigation> {
                 Home(),
                 Profile(),
                 Insurance(),
-                Insurance(),
+                // Insurance(),
               ],
             ),
           ),
@@ -229,12 +236,13 @@ class _NavigationState extends State<Navigation> {
           actions: <Widget>[
             TextButton(
               child: Text('Yes'),
-              onPressed: () {
-                // final preferences = await SharedPreferences.getInstance();
-                // await preferences.clear();
+              onPressed: () async {
+                final preferences = await SharedPreferences.getInstance();
+                await preferences.clear();
 
                 print('Confirmed');
                 Navigator.of(context).pop();
+                Get.to(MyApp());
               },
             ),
             TextButton(
