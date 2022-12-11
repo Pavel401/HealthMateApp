@@ -130,3 +130,6 @@ Doctor Views patients public profile
 )
   https://github.com/Vishvajeet590/Healthmate_Backend/blob/master/README.md
  
+ 
+ ## FIGMA Design
+ https://www.figma.com/file/cD8NNyUIahL2vKWacbGXjr/Health-Mate?node-id=2%3A38&t=iPoRLWZuCv1ggwwz-0
