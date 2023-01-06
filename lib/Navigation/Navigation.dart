@@ -11,8 +11,8 @@ import 'package:medica/Screens/Insurance/Insurance.dart';
 import 'package:medica/Screens/Profile/Profile.dart';
 import 'package:medica/Screens/ShareProfile/ShareProfile.dart';
 import 'package:medica/Screens/ViewPublicProfile.dart/ViewPublicProfile.dart';
-import 'package:medica/Screens/donations/donations.dart';
 import 'package:medica/constants/health_mate_colors.dart';
+import 'package:medica/donations/donations.dart';
 import 'package:medica/main.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';

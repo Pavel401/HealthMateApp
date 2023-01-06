@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
-import 'package:medica/Screens/donations/donations_card.dart';
-import 'package:medica/Screens/donations/donations_controller.dart';
+
 import 'package:medica/constants/health_mate_colors.dart';
+import 'package:medica/donations/donations_card.dart';
+import 'package:medica/donations/donations_controller.dart';
 import 'package:sizer/sizer.dart';
 
 class Donations extends StatefulWidget {
